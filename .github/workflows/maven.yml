@@ -55,8 +55,6 @@ jobs:
       with:
         name: Package
         path: staging
-  
-//deploy to tomcat
     - name: Deploy to Tomcat
       uses: appleboy/ssh-action@master
       with:
@@ -71,4 +69,3 @@ jobs:
           cp /home/ubuntu/Package/*.war .
           cd /opt/tomcat/bin
           ./startup.sh
-```
