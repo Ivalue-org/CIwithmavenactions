@@ -55,6 +55,7 @@ jobs:
       with:
         name: Package
         path: staging
+  deploy tomcat:    
     - name: Deploy to Tomcat
       uses: appleboy/ssh-action@master
       with:
