@@ -28,4 +28,11 @@ jobs:
       uses: webfactory/ssh-agent@v0.5.0
       with:
         ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+        script: |
+          cd opt/bin/tomcat/webapps
+          rm -rf *
+          cp /home/runner/work/CIwithmavenactions/CIwithmavenactions/target/gs-maven-0.1.0-shaded.jar .
+          /opt/bin/tomcat/bin/shutdown.sh
+          /opt/bin/tomcat/bin/startup.sh
+
    
